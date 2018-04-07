@@ -131,16 +131,16 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
 
     $user_no_info = $user->data()->id; 
 
-    $query1 = $db2->query("SELECT * FROM album WHERE album_name='".$name2."'AND user_no='".$user_no_info."'"); 
+    $query1 = $db2->query("SELECT * FROM file WHERE file_name='".$name2."'AND user_no='".$user_no_info."'"); 
 
     $x1 = $query1->results(true);
 
-   $albumNo = NULL;
+   $catNo = NULL;
 
     foreach ($x1 as $value1)
 
                 {
-                   $albumNo = $value1['no'];
+                   $catNo = $value1['no'];
                    break;
                 }
 
@@ -152,7 +152,7 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
 
 //getting pictures info for a user
 
-$query2 = $db2->query("SELECT * FROM pics_category WHERE pics_category='".$albumNo."' AND user_no='".$user_no_info."'");
+$query2 = $db2->query("SELECT * FROM category WHERE category='".$catNo."' AND user_no='".$user_no_info."'");
 
 $x2 = $query2->results(true);
 
