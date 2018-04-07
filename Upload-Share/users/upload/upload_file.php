@@ -55,7 +55,7 @@ if (isset($_POST['formSubmit']))
     
     {
 
-        header("Location: upload/upload_pics.php?cat=".$_POST['access']."");
+        header("Location: upload/upload_file.php?cat=".$_POST['access']."");
 
 		
 	}
@@ -102,21 +102,21 @@ if (isset($_POST['formSubmit']))
                 
  $db = DB::getInstance(); 
 
-$query = $db->query("SELECT album_name FROM album WHERE user_no='".$user_no_info."'"); 
+$query = $db->query("SELECT file_name FROM file WHERE user_no='".$user_no_info."'"); 
 
 $x = $query->results(true);
 
-if (isset($_SESSION['getAlbumName'])){
+if (isset($_SESSION['getUploadName'])){
 
-echo("<option>" . $_SESSION['getAlbumName'] ."</option>");
+echo("<option>" . $_SESSION['getUploadName'] ."</option>");
 
 }
   
                foreach ($x as $value)
                 {
-                    if ($value[album_name]!=$_SESSION['getAlbumName']){
+                    if ($value[file_name]!=$_SESSION['getUploadName']){
 
-                   echo("<option>" . $value[album_name] ."</option>"); 
+                   echo("<option>" . $value[file_name] ."</option>"); 
                     
                     }
                  
