@@ -62,22 +62,22 @@ if (isset($_POST['formSubmit']))
 
         //getting upload no from upload
 
- $query1 = $db->query("SELECT * FROM album WHERE album_name='".$varUpload."' AND user_no='".$user_no_info."'"); 
+ $query1 = $db->query("SELECT * FROM file WHERE file_name='".$varUpload."' AND user_no='".$user_no_info."'"); 
 
   $x1 = $query1->results(true);
 
     foreach ($x1 as $value1)
 
                 {
-                   $albumNo = $value1['no'];
+                   $fileNo = $value1['no'];
                    break;
                 }
 
-        // getting info from pics_category
 
-     //  $query = $db->query("SELECT * FROM pics_category WHERE pics_category=?",array($albumNo)," AND user_no=",array($user_no_info)); 
+        // getting info from category
 
- $query = $db->query("SELECT * FROM pics_category WHERE pics_category='".$albumNo."' AND user_no='".$user_no_info."'"); 
+ 
+ $query = $db->query("SELECT * FROM category WHERE category='".$fileNo."' AND user_no='".$user_no_info."'"); 
 
 
        $r = $query->results(true);
@@ -88,7 +88,7 @@ if (isset($_POST['formSubmit']))
           			foreach($r as $value1) 
         {
 
-			$errorMessage .= "<li>".$varUpload." album has images. Move them to other album or delete these images.</li>";
+			$errorMessage .= "<li>".$varUpload." Folder has files. Move them to other folder or delete these files.</li>";
 
             $count+=1;
 
@@ -97,7 +97,7 @@ if (isset($_POST['formSubmit']))
 
         if($count < 1){
 
-            $db->delete('album',array('no','=',$albumNo));
+            $db->delete('file',array('no','=',$fileNo));
 
 
 			header("Location: upload.php");
@@ -154,7 +154,7 @@ if (isset($_POST['formSubmit']))
 
   $user_no_info = $user->data()->id;
 
-$query = $db->query("SELECT album_name FROM album WHERE user_no='".$user_no_info."'"); 
+$query = $db->query("SELECT file_name FROM file WHERE user_no='".$user_no_info."'"); 
 
 $x = $query->results(true);
 
@@ -164,7 +164,7 @@ $x = $query->results(true);
                 {
 
 
-                    echo("<option>" . $value[album_name] . "</option>");
+                    echo("<option>" . $value[file_name] . "</option>");
 
 
                 }
