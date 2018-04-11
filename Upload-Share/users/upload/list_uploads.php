@@ -60,9 +60,9 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
     
    $user_no_info = $user->data()->id; 
 
-$usersAlbumsQ = $db->query("SELECT album_name FROM album WHERE user_no='".$user_no_info."' ORDER BY user_no ASC");
+$usersAlbumsQ = $db->query("SELECT file_name FROM file WHERE user_no='".$user_no_info."' ORDER BY user_no ASC");
 
-$album_info = $usersAlbumsQ->results(true);
+$file_info = $usersAlbumsQ->results(true);
 
 ?>
 <div id="page-wrapper">
@@ -87,7 +87,7 @@ $album_info = $usersAlbumsQ->results(true);
 			  <br>
 			  <table class='table table-hover table-list-search'>
 				<tr>
-				  <th>No</th><th>Albums</th>
+				  <th>No</th><th>Files</th>
 				</tr>
 
 				<?php
@@ -96,12 +96,12 @@ $album_info = $usersAlbumsQ->results(true);
 
                   $pathforimage2 = $path_for.'users/upload/upload.php?upload=';
 				
-				foreach ($album_info as $Data) {
+				foreach ($file_info as $Data) {
 				  ?>
 				  <tr>
 					<td><?=$count_no;?></a></td>
 
-					<td> <a href="<?php echo ("$pathforimage2"); echo ($Data['album_name']); ?>"><?= $Data["album_name"]; ?> </a>  </td>
+					<td> <a href="<?php echo ("$pathforimage2"); echo ($Data['file_name']); ?>"><?= $Data["file_name"]; ?> </a>  </td>
 				  </tr>
 				  <?php
           
