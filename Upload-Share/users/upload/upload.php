@@ -168,7 +168,7 @@ $x2 = $query2->results(true);
                         $catNo = $value2['no'];
           $fileValue = $value2['file'];
            $folderValue =  $value2['folder'];
-           $albumName = $value2['pics_category'];    
+           $fileName = $value2['category'];    
 
            $pathforimage = $path_for.'users/upload/images/delete.png';
 
@@ -200,8 +200,8 @@ echo("<tbody>");
  echo("<tr class='success'>");
  echo("<td>Default</td>");
   echo("<td> <a href='upload/data/".$value2['folder']."/".$value2['file']."' download>".$value2['file']."</a> </td>");
-  echo("<td><button id='close-image' class='btn btn-link' onclick='moveFunction(\"$catNo\",\"$fileValue\",\"$folderValue\",\"$albumName\")'><img src='$pathforimage2'></button></td>");
-   echo("<td><button id='close-image' class='btn btn-link' onclick='deleteFunction(\"$fileValue\",\"$folderValue\",\"$albumName\")'><img src= '$pathforimage'></button></td>");
+  echo("<td><button id='close-image' class='btn btn-link' onclick='moveFunction(\"$catNo\",\"$fileValue\",\"$folderValue\",\"$fileName\")'><img src='$pathforimage2'></button></td>");
+   echo("<td><button id='close-image' class='btn btn-link' onclick='deleteFunction(\"$fileValue\",\"$folderValue\",\"$fileName\")'><img src= '$pathforimage'></button></td>");
 
 
  

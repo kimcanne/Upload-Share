@@ -131,9 +131,9 @@ if ($method == "POST") {
             //posting to database
 
 
-        $fields=array('user_no'=>$user_no_info,'pics_category'=>$_SESSION['getCatName'], 'folder'=>$folder["name"], 'file'=>$result["uploadName"]);
+        $fields=array('user_no'=>$user_no_info,'category'=>$_SESSION['getCatName'], 'folder'=>$folder["name"], 'file'=>$result["uploadName"]);
 
-         $db->insert('pics_category',$fields);
+         $db->insert('category',$fields);
 
          // resize the files
 
