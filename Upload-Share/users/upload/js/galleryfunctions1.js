@@ -1,5 +1,5 @@
 
-function deleteFunction(filename,foldername,albumname) {
+function deleteFunction(filename,foldername,file) {
 
 
 var txt;
@@ -9,7 +9,7 @@ var r = confirm("Delete file "+filename);
 if (r == true) {
     
 
-   window.location.replace("delete_file.php?albumname="+albumname+"&foldername="+foldername+"&filename="+filename);
+   window.location.replace("delete_file.php?file="+file+"&foldername="+foldername+"&filename="+filename);
 
 
 } else {
@@ -20,7 +20,7 @@ if (r == true) {
 }
 
 
-function moveFunction(no,filename,foldername,albumname) {
+function moveFunction(no,filename,foldername,file) {
 
 
 var txt;
@@ -30,7 +30,7 @@ var r = confirm("Move file "+filename);
 if (r == true) {
     
 
-   window.location.replace("move_file.php?pic="+no+"&albumname="+albumname+"&foldername="+foldername+"&filename="+filename);
+   window.location.replace("move_file.php?fileno="+no+"&file="+file+"&foldername="+foldername+"&filename="+filename);
 
 
 } else {
