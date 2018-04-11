@@ -60,9 +60,9 @@ if($_POST['formSubmit'] == "Submit")
 
     {
 
-       $albumName = $_POST['upload'];
+       $fileName = $_POST['upload'];
 
-       $picNo = $_POST['no'];
+       $fileNo = $_POST['no'];
 
 
            $db2 = DB::getInstance();
@@ -72,25 +72,25 @@ if($_POST['formSubmit'] == "Submit")
 
         //getting upload no from upload
 
- $query1 = $db2->query("SELECT * FROM album WHERE album_name='".$albumName."' AND user_no='".$user_no_info."'"); 
+ $query1 = $db2->query("SELECT * FROM file WHERE file_name='".$fileName."' AND user_no='".$user_no_info."'"); 
 
   $x1 = $query1->results(true);
 
     foreach ($x1 as $value1)
 
                 {
-                   $albumNo = $value1[no];
+                   $catNo = $value1[no];
                    break;
                 }
 
 
 
 
- $query = $db2->query("UPDATE pics_category SET pics_category=? WHERE no=?",array($albumNo,$picNo)); 
+ $query = $db2->query("UPDATE category SET category=? WHERE no=?",array($catNo,$fileNo)); 
 
   $query->results();
 
-  header("Location: upload.php?upload=".$albumName."");
+  header("Location: upload.php?upload=".$fileName."");
 
 
 
@@ -130,7 +130,7 @@ if($_POST['formSubmit'] == "Submit")
 
       <?php
           
-     $getValue = $_GET ['pic'];
+     $getValue = $_GET ['file'];
 
       ?>
 
@@ -147,7 +147,7 @@ if($_POST['formSubmit'] == "Submit")
 
  $db = DB::getInstance(); 
 
-$query = $db->query("SELECT album_name FROM album WHERE user_no='".$user_no_info."'"); 
+$query = $db->query("SELECT file_name FROM file WHERE user_no='".$user_no_info."'"); 
 
 $x = $query->results(true);
 
@@ -157,7 +157,7 @@ $x = $query->results(true);
                 {
 
 
-                    echo("<option>" . $value[album_name] . "</option>");
+                    echo("<option>" . $value[file_name] . "</option>");
 
 
                 }
