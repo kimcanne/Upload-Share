@@ -53,19 +53,19 @@ if (isset($_GET['foldername'])){
     
     if (isset($_GET['filename'])){
 
-        if (isset($_GET['albumname'])){
+        if (isset($_GET['file'])){
         
         $foldername= $_GET['foldername'];
 
         $filename= $_GET['filename'];
 
-        $albumname = $_GET ['albumname'];
+        $albumname = $_GET ['file'];
 
 
            $db = DB::getInstance();
 
 
-       $db->delete('pics_category',array('folder','=',$foldername));
+       $db->delete('category',array('folder','=',$foldername));
        
        $foldername="$foldername";
 
@@ -105,18 +105,18 @@ $path = "upload/data/".$foldername;
 
     $user_no_info = $user->data()->id; 
 
-    $query1 = $db->query("SELECT * FROM album WHERE no ='".$albumname."' AND user_no='".$user_no_info."'"); 
+    $query1 = $db->query("SELECT * FROM file WHERE no ='".$filename."' AND user_no='".$user_no_info."'"); 
 
   $x1 = $query1->results(true);
 
     foreach ($x1 as $value1)
 
                 {
-                   $albumName2 = $value1[album_name];
+                   $fileName2 = $value1[file_name];
                    break;
                 }
 
-     header("Location: upload.php?upload=".$albumName2."");
+     header("Location: upload.php?upload=".$fileName2."");
     }
 }
 
