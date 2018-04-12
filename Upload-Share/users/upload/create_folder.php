@@ -97,7 +97,7 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
 
     $user_no_info = $user->data()->id; 
 
-    $query1 = $db2->query("SELECT * FROM album WHERE album_name='".$varName."'AND user_no='".$user_no_info."'"); 
+    $query1 = $db2->query("SELECT * FROM file WHERE file_name='".$varName."'AND user_no='".$user_no_info."'"); 
 
     $x1 = $query1->results(true);
 
@@ -125,9 +125,9 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
 
             $db = DB::getInstance();
 
-            $fields=array('user_no'=>$user_no_info,'album_name'=>$varName, 'description'=>$varDes, 'publicORprivate'=>$varAccess);
+            $fields=array('user_no'=>$user_no_info,'file_name'=>$varName, 'description'=>$varDes, 'publicORprivate'=>$varAccess);
 
-            $db->insert('album',$fields);
+            $db->insert('file',$fields);
 
 			header("Location: upload.php?upload=".$varName);
 
