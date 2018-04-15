@@ -81,7 +81,7 @@ $email_act=$results->email_act;
 
  $db = DB::getInstance(); 
 
-$query = $db->query("SELECT album_name FROM album WHERE user_no='".$user_no_info."'"); 
+$query = $db->query("SELECT file_name FROM file WHERE user_no='".$user_no_info."'"); 
 
 $x = $query->results(true);
 
@@ -90,11 +90,11 @@ $x = $query->results(true);
                foreach ($x as $value)
                 {
                      
-                     $albumName = $value['album_name'];  
+                     $FileName = $value['file_name'];  
                      
                      ?>                
                               
-                    <li class='hidden-sm hidden-md hidden-lg'><a href="<?= $us_url_root?>users/upload/upload.php?upload=<?= urlencode($albumName) ?>"><i class='fa fa-fw fa-book'></i> <?= $value['album_name'] ?> </a></li>
+                    <li class='hidden-sm hidden-md hidden-lg'><a href="<?= $us_url_root?>users/upload/upload.php?upload=<?= urlencode($FileName) ?>"><i class='fa fa-fw fa-book'></i> <?= $value['file_name'] ?> </a></li>
                 <?php
                 
                 }
@@ -142,7 +142,7 @@ $x = $query->results(true);
 
  $db = DB::getInstance(); 
 
-$query = $db->query("SELECT album_name FROM album WHERE user_no='".$user_no_info."'"); 
+$query = $db->query("SELECT file_name FROM file WHERE user_no='".$user_no_info."'"); 
 
 $x = $query->results(true);
 
@@ -150,9 +150,9 @@ $x = $query->results(true);
                 
                foreach ($x as $value)
                 {
-                      $albumName = $value['album_name'];                   
+                      $fileName = $value['file_name'];                   
                               
-                    echo("<li><a href=$us_url_root"."users/upload/upload.php?upload=".urlencode($albumName)."><i class='fa fa-fw fa-book'></i>" . $value['album_name'] . "</a></li>");
+                    echo("<li><a href=$us_url_root"."users/upload/upload.php?upload=".urlencode($fileName)."><i class='fa fa-fw fa-book'></i>" . $value['file_name'] . "</a></li>");
                 }
 
                 echo("<li class='divider'></li>");
