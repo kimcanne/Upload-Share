@@ -767,6 +767,37 @@ CREATE TABLE `us_form_views` (
 
 -- --------------------------------------------------------
 
+-- ----------------------------------------------------- 
+-- Table `file` 
+ -- ----------------------------------------------------- 
+ CREATE TABLE IF NOT EXISTS `file` ( 
+   `no` INT(11) NOT NULL AUTO_INCREMENT COMMENT '', 
+   `file_name` VARCHAR(35) NOT NULL COMMENT '', 
+   `description` VARCHAR(45) NULL DEFAULT NULL COMMENT '', 
+   `publicORprivate` VARCHAR(45) NULL DEFAULT NULL COMMENT '', 
+   `user_no` INT(12) NOT NULL COMMENT '', 
+   PRIMARY KEY (`no`)  COMMENT '') 
+ ENGINE = InnoDB 
+ AUTO_INCREMENT = 18 
+ DEFAULT CHARACTER SET = utf8; 
+
+
+ 
+ -- ----------------------------------------------------- 
+ -- Table `category` 
+ -- ----------------------------------------------------- 
+ CREATE TABLE IF NOT EXISTS `category` ( 
+   `no` INT(11) NOT NULL AUTO_INCREMENT COMMENT '', 
+   `user_no` INT(12) NOT NULL COMMENT '', 
+   `category` VARCHAR(45) NULL DEFAULT NULL COMMENT '', 
+   `folder` VARCHAR(45) NULL DEFAULT NULL COMMENT '', 
+   `file` VARCHAR(70) NULL DEFAULT NULL COMMENT '', 
+   PRIMARY KEY (`no`)  COMMENT '') 
+ ENGINE = InnoDB 
+ AUTO_INCREMENT = 10 
+ DEFAULT CHARACTER SET = utf8; 
+
+
 --
 -- Table structure for table `us_ip_blacklist`
 --
