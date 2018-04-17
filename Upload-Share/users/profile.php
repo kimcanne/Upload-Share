@@ -73,7 +73,144 @@ else
 					</div>
 				</div>
 
-										<a class="btn btn-success" href="view_all_users.php" role="button">All Users</a>
+			
+             <!-----Files Folder Start------->
+
+                 <h3><?php  
+  
+  if (isset($_GET['upload']))
+
+   {
+  
+  echo $_GET['upload']; 
+    
+    }
+
+    ?>
+    
+    </h3>
+
+<div class="well">
+<div class="row">
+   
+    
+
+    
+
+       <?php
+           
+   $db2 = DB::getInstance();
+           
+   //getting upload name
+
+   if (isset($_GET['upload']))
+
+   {
+        
+    $name2 = $_GET['upload']; 
+
+   
+
+    //getting upload no
+
+    $user_no_info = $user->data()->id; 
+
+    $query1 = $db2->query("SELECT * FROM file WHERE file_name='".$name2."'AND user_no='".$user_no_info."'"); 
+
+    $x1 = $query1->results(true);
+
+   $catNo = NULL;
+
+    foreach ($x1 as $value1)
+
+                {
+                   $catNo = $value1['no'];
+                   break;
+                }
+
+               
+
+    //getting user name
+    
+   $user_no_info = $user->data()->id;       
+
+//getting pictures info for a user
+
+$query2 = $db2->query("SELECT * FROM category WHERE category='".$catNo."' AND user_no='".$user_no_info."'");
+
+$x2 = $query2->results(true);
+
+ $count1=1;
+
+ echo("<div class='table-responsive'>");
+   echo("<table class='table'>");
+                               
+               foreach ($x2 as $value2)
+
+                {
+
+                        $catNo = $value2['no'];
+          $fileValue = $value2['file'];
+           $folderValue =  $value2['folder'];
+           $fileName = $value2['category'];    
+
+
+             
+
+            if ($count1 == 1)
+
+            {
+
+   
+ echo("<thead>");
+ echo("<tr>");
+
+ echo("<th>File</th>");
+  echo("<th>Download</th>");
+
+ echo("</tr>");
+ echo("</thead>");
+ 
+
+   $count1 +=1;
+
+            }
+
+
+echo("<tbody>");
+ echo("<tr class='success'>");
+ echo("<td>Default</td>");
+  echo("<td> <a href='upload/data/".$value2['folder']."/".$value2['file']."' download>".$value2['file']."</a> </td>");
+
+
+ 
+  echo("</tbody>");
+
+            
+                                           
+                }
+
+                 echo("</table>");
+
+ echo("</div>");
+          
+   }
+
+            ?>
+
+
+
+
+
+
+ <!-----Files Folder
+     End------->
+
+
+    
+       </div> <!-- /.col -->
+		</div> <!-- /.row -->
+
 
 
     </div> <!-- /container --><br />
