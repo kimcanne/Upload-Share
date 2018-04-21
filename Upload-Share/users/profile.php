@@ -26,9 +26,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //PHP Goes Here!
 
 if(isset($_GET['id'])) $userID = Input::get('id');
-else $userID = $user->data()->id;
+
+else
+
+{ 
+
+if(!isset($user->data()->id)){
+
+    exit();
+}
+
+$userID = $user->data()->id;
+
+}
 
 $userQ = $db->query("SELECT * FROM profiles LEFT JOIN users ON user_id = users.id WHERE user_id = ?",array($userID));
+
+
 if ($userQ->count() > 0) {
 	$thatUser = $userQ->first();
 
@@ -55,6 +69,9 @@ else
 	$useravatar = '';
 	$editbio = ' <small><a href="/">Go to the homepage</a></small>';
 	}
+
+
+
 ?>
    <div id="page-wrapper">
 
@@ -72,6 +89,40 @@ else
 					</div>
 					</div>
 				</div>
+
+
+             <!--------List File Folders------->
+<?php
+             $usersAlbumsQ = $db->query("SELECT file_name FROM file WHERE user_no='".$userID."' ORDER BY user_no ASC");
+
+$file_info = $usersAlbumsQ->results(true);
+
+?>
+
+              <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    Public File Folders <span class="caret"></span></button>
+    <ul class="dropdown-menu" role="menu">
+
+        <?php
+
+
+                  
+				
+				foreach ($file_info as $Data) {
+				 
+                  ?>
+
+      <li><a href="profile.php?id=<?= $userID; ?>&upload=<?= $Data["file_name"]; ?>"><?= $Data["file_name"]; ?></a></li>
+      
+         <?php
+
+				}
+
+				?>
+
+    </ul>
+  </div>
 
 			
              <!-----Files Folder Start------->
@@ -113,9 +164,9 @@ else
 
     //getting upload no
 
-    $user_no_info = $user->data()->id; 
+   // $user_no_info = $user->data()->id; 
 
-    $query1 = $db2->query("SELECT * FROM file WHERE file_name='".$name2."'AND user_no='".$user_no_info."'"); 
+    $query1 = $db2->query("SELECT * FROM file WHERE file_name='".$name2."'AND user_no='".$userID."'"); 
 
     $x1 = $query1->results(true);
 
@@ -132,11 +183,11 @@ else
 
     //getting user name
     
-   $user_no_info = $user->data()->id;       
+ //  $user_no_info = $user->data()->id;       
 
 //getting pictures info for a user
 
-$query2 = $db2->query("SELECT * FROM category WHERE category='".$catNo."' AND user_no='".$user_no_info."'");
+$query2 = $db2->query("SELECT * FROM category WHERE category='".$catNo."' AND user_no='".$userID."'");
 
 $x2 = $query2->results(true);
 
@@ -180,7 +231,7 @@ $x2 = $query2->results(true);
 echo("<tbody>");
  echo("<tr class='success'>");
  echo("<td>Default</td>");
-  echo("<td> <a href='upload/data/".$value2['folder']."/".$value2['file']."' download>".$value2['file']."</a> </td>");
+  echo("<td> <a href='upload/upload/data/".$value2['folder']."/".$value2['file']."' download>".$value2['file']."</a> </td>");
 
 
  
