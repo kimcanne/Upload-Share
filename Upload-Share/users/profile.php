@@ -93,7 +93,7 @@ else
 
              <!--------List File Folders------->
 <?php
-             $usersAlbumsQ = $db->query("SELECT file_name FROM file WHERE user_no='".$userID."' ORDER BY user_no ASC");
+             $usersAlbumsQ = $db->query("SELECT file_name FROM file WHERE user_no='".$userID."' AND publicORprivate = 'Public' ORDER BY user_no ASC");
 
 $file_info = $usersAlbumsQ->results(true);
 
