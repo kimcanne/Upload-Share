@@ -70,7 +70,7 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
     <head>
         <meta charset="utf-8" />
 
-        <title>Gallery</title>
+        <title>Folders</title>
 
 
 
@@ -97,8 +97,35 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
   if (isset($_GET['upload']))
 
    {
+
+       $db2 = DB::getInstance();
+
+       //File no
+
+        $query0 = $db2->query("SELECT no,publicORprivate FROM file WHERE file_name='".$_GET['upload']."'AND user_no='".$user_no_info."'"); 
+
+    $x0 = $query0->results(true);
+
+     $fileNo = NULL;
+
+    foreach ($x0 as $value0)
+
+                {
+
+
+                   $fileNo = $value0['no'];
+                   $PorP = $value0['publicORprivate'];
+                }
+
+
+
+    //Showing Folder name & File no
+
+    $url = "update_folder.php?upload=$fileNo";
   
-  echo $_GET['upload']; 
+  echo $_GET['upload'];
+
+  echo "  ("."<a href=$url>$PorP</a>".")";
     
     }
 
@@ -115,7 +142,7 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
 
        <?php
            
-   $db2 = DB::getInstance();
+   
            
    //getting upload name
 
@@ -232,10 +259,16 @@ echo("<tbody>");
    {
        ?>
 
+     <div class="row">
 
+ <div class="col-sm-6 col-md-4">
+
+    <div class="thumbnail">
        
 
      <?php 
+
+
  
  $pathforimage3 = $path_for.'users/upload/images/albums.png';
 
@@ -249,13 +282,19 @@ echo("<tbody>");
         <p style="text-align: center;"><a href="<?php  echo ("$path_create_upload"); ?>" class="btn btn-primary" role="button">Create</a></p>
       </div>
    
-        
-     
+           </div>
 
 
 
+  </div>     
+  
 
-       
+  <div class="col-sm-6 col-md-4">
+
+    <div class="thumbnail">
+
+
+
 
      <?php 
  
@@ -272,7 +311,16 @@ echo("<tbody>");
       </div>
    
         
-       
+        </div>
+
+
+
+  </div>
+
+
+ <div class="col-sm-6 col-md-4">
+
+    <div class="thumbnail">
 
 
 
@@ -292,7 +340,15 @@ echo("<tbody>");
         <p style="text-align: center;"><a href="<?php  echo ("$path_create_upload"); ?>" class="btn btn-primary" role="button">Folders</a></p>
       </div>
    
-        
+     </div>
+
+
+
+  </div>
+
+
+
+</div>    
         
 
 
