@@ -116,6 +116,12 @@ $userdetails = fetchUserDetails(NULL, NULL, $get_info_id); //Fetch user details
                    $fileNo = $value0['no'];
                    $PorP = $value0['publicORprivate'];
                 }
+                
+                
+                if(!isset($fileNo))  {
+                    
+                    header("Location: upload.php");
+                }
 
 
 
