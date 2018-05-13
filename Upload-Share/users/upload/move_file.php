@@ -130,7 +130,7 @@ if($_POST['formSubmit'] == "Submit")
 
       <?php
           
-     $getValue = $_GET ['file'];
+     $getValue = $_GET ['fileno'];
 
       ?>
 
