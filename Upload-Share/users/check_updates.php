@@ -35,13 +35,9 @@ require_once $abs_us_root.$us_url_root.'users/includes/navigation.php';
 require_once 'includes/user_spice_ver.php';
 define('REMOTE_VERSION', 'http://userspice.com/version/version.txt');
 $remoteVersion=trim(file_get_contents(REMOTE_VERSION));
-echo "You are running version ".$user_spice_ver."<br><br>";
-echo "The latest version is ".$remoteVersion."<br><br>";
-if(version_compare($remoteVersion, $user_spice_ver) ==  1){
-	echo "Updates are available at <a href='https://www.userspice.com/updates'>UserSpice.com/updates</a><br>";
-} else {
-	echo "You are running the latest version!";
-}
+echo "You are running 1st version <br><br>";
+
+
 ?>
 </h3>
 </div> <!-- /.col -->
