@@ -52,7 +52,7 @@ $lang = array_merge($lang,array(
 	"AB_ERROR_CREATE"  => "Error creating zip file",
 	"AB_DB_ZIPPED"     => "Database Zipped",
 	"AB_PATHEXIST"     => "Backup path already exists or could not be created.",
-	"AB_T_FILE_ZIP"    => "Userspice Files Zipped",
+	"AB_T_FILE_ZIP"    => "Upload Files Zipped",
 	"AB_TABLES_ZIP"    => "Tables Zipped",
 	"AB_BACKUP_DELETE" => "Backup(s) Deleted !",
 	"AB_PAGENAME"      => "System Backup",
@@ -60,9 +60,9 @@ $lang = array_merge($lang,array(
 	"AB_BACKUP_DEST"   => "Backup Destination",
 	"AB_BACKUP_DEST_INFO" => "Relative to the z_us_root.php file. Put a / for root.",
 	"AB_BACKUP_SOURCE" => "Backup Source",
-	"AB_DB_TM_FILES"   => "Database &amp; Userspice Files",
+	"AB_DB_TM_FILES"   => "Database &amp; Upload Files",
 	"AB_DB_FILES"      => "Database Only",
-	"AB_TM_FILES"      => "Userspice Files Only",
+	"AB_TM_FILES"      => "Upload Files Only",
 	"AB_SINGLE_TBL"    => "Single Table",
 	"AB_SELECT_TBL"    => "Select Table",
 	"AB_DB_TBLS"       => "DB Tables",
@@ -254,7 +254,7 @@ if(!empty($_POST)) {
 				if(rename($targetZipFile,$backupZipHashFilename)){
 
 					$successes[] = lang('AB_FILE_RENAMED').$backupZipHashFilename;
-					logger($user->data()->id,"Admin Backup","Completed backup for UserSpice Files & DB.");
+					logger($user->data()->id,"Admin Backup","Completed backup for Upload Files & DB.");
 
 				}else{
 
@@ -339,7 +339,7 @@ if(!empty($_POST)) {
 				if(rename($targetZipFile,$backupZipHashFilename)){
 
 					$successes[] = lang('AB_FILE_RENAMED').$backupZipHashFilename;
-					logger($user->data()->id,"Admin Backup","Completed backup for UserSpice Files.");
+					logger($user->data()->id,"Admin Backup","Completed backup for Upload Files.");
 
 				}else{
 
