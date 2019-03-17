@@ -407,13 +407,22 @@ INSERT INTO `pages` (`id`, `page`, `title`, `private`, `re_auth`) VALUES
 (56, 'users/admin_logs_exempt.php', 'Site Logs', 1, 0),
 (57, 'users/admin_logs_manager.php', 'Site Logs', 1, 0),
 (58, 'users/admin_logs_mapper.php', 'Site Logs', 1, 0),
-(68, 'users/update.php', 'Update UserSpice', 1, 0),
+(68, 'users/update.php', 'Update Upload', 1, 0),
 (69, 'users/admin_menu_item.php', 'Manage Menus', 1, 0),
 (70, 'users/admin_menus.php', 'Manage Menus', 1, 0),
 (71, 'users/admin_menu.php', 'Manage Menus', 1, 0),
 (72, 'users/admin_ips.php', 'Admin IPs', 1, 0),
 (73, 'users/subscribe.php', '', 1, 0),
 (74, 'users/admin_notifications.php', 'Admin Notifications', 1, 0),
+(81, 'users/upload/upload_file.php', 'Upload File', 1, 0),
+(82, 'users/upload/upload.php', 'Upload', 1, 0),
+(83, 'users/upload/create_folder.php', 'Create Folder', 1, 0),
+(84, 'users/upload/list_uploads.php', 'List Uploads', 1, 0),
+(85, 'users/upload/update_folder.php', 'Update Folder', 1, 0),
+(86, 'users/upload/delete_file.php', 'Delete File', 1, 0),
+(87, 'users/upload/move_file.php', 'Move File', 1, 0),
+(89, 'users/upload/delete_upload.php', 'Delete Upload', 1, 0),
+(90, 'users/upload/public_profile.php', 'Public Profile', 1, 0),
 (75, 'users/enable2fa.php', 'Two Factor Authentication', 1, 0);
 
 -- --------------------------------------------------------
@@ -580,7 +589,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `recaptcha`, `force_ssl`, `css_sample`, `us_css1`, `us_css2`, `us_css3`, `site_name`, `language`, `track_guest`, `site_offline`, `force_pr`, `glogin`, `fblogin`, `gid`, `gsecret`, `gredirect`, `ghome`, `fbid`, `fbsecret`, `fbcallback`, `graph_ver`, `finalredir`, `req_cap`, `req_num`, `min_pw`, `max_pw`, `min_un`, `max_un`, `messaging`, `snooping`, `echouser`, `wys`, `change_un`, `backup_dest`, `backup_source`, `backup_table`, `msg_notification`, `permission_restriction`, `auto_assign_un`, `page_permission_restriction`, `msg_blocked_users`, `msg_default_to`, `notifications`, `notif_daylimit`, `recap_public`, `recap_private`, `page_default_private`, `navigation_type`, `copyright`, `custom_settings`, `system_announcement`, `twofa`) VALUES
-(1, 0, 0, 0, '../users/css/color_schemes/bootstrap.min.css', '../users/css/sb-admin.css', '../users/css/custom.css', 'UserSpice', 'en', 1, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', 0, 0, 6, 30, 4, 30, 1, 1, 0, 1, 0, '/', 'everything', '', 0, 0, 0, 0, 0, 1, 0, 7, '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI', '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe', 1, 1, 'UserSpice', 1, '', 0);
+(1, 0, 0, 0, '../users/css/color_schemes/bootstrap.min.css', '../users/css/sb-admin.css', '../users/css/custom.css', 'Upload', 'en', 1, 0, 0, 0, 0, '', '', '', '', '', '', '', '', '', 0, 0, 6, 30, 4, 30, 1, 1, 0, 1, 0, '/', 'everything', '', 0, 0, 0, 0, 0, 1, 0, 7, '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI', '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe', 1, 1, 'Upload', 1, '', 0);
 
 -- --------------------------------------------------------
 
@@ -651,8 +660,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `email_new`, `username`, `password`, `fname`, `lname`, `permissions`, `logins`, `account_owner`, `account_id`, `company`, `join_date`, `last_login`, `email_verified`, `vericode`, `active`, `oauth_provider`, `oauth_uid`, `gender`, `locale`, `gpluslink`, `picture`, `created`, `modified`, `fb_uid`, `un_changed`, `msg_exempt`, `last_confirm`, `protected`, `dev_user`, `msg_notification`, `force_pr`, `twoKey`, `twoEnabled`, `cloak_allowed`) VALUES
-(1, 'userspicephp@gmail.com', NULL, 'admin', '$2y$12$1v06jm2KMOXuuo3qP7erTuTIJFOnzhpds1Moa8BadnUUeX0RV3ex.', 'The', 'Admin', 1, 0, 1, 0, 'UserSpice', '2016-01-01 00:00:00', '2017-10-09 15:20:34', 1, '322418', 0, '', '', '', '', '', '', '0000-00-00 00:00:00', '1899-11-30 00:00:00', '', 0, 1, '2017-10-08 15:24:37', 1, 0, 1, 0, NULL, 0, 0),
-(2, 'noreply@userspice.com', NULL, 'user', '$2y$12$HZa0/d7evKvuHO8I3U8Ff.pOjJqsGTZqlX8qURratzP./EvWetbkK', 'Sample', 'User', 1, 0, 1, 0, 'none', '2016-01-02 00:00:00', '2017-10-08 15:47:41', 1, '970748', 1, '', '', '', '', '', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', 0, 0, NULL, 0, 0, 1, 0, NULL, 0, 0);
+(1, 'Upload@gmail.com', NULL, 'admin', '$2y$12$1v06jm2KMOXuuo3qP7erTuTIJFOnzhpds1Moa8BadnUUeX0RV3ex.', 'The', 'Admin', 1, 0, 1, 0, 'Upload', '2016-01-01 00:00:00', '2017-10-09 15:20:34', 1, '322418', 0, '', '', '', '', '', '', '0000-00-00 00:00:00', '1899-11-30 00:00:00', '', 0, 1, '2017-10-08 15:24:37', 1, 0, 1, 0, NULL, 0, 0),
+(2, 'noreply@Upload.com', NULL, 'user', '$2y$12$HZa0/d7evKvuHO8I3U8Ff.pOjJqsGTZqlX8qURratzP./EvWetbkK', 'Sample', 'User', 1, 0, 1, 0, 'none', '2016-01-02 00:00:00', '2017-10-08 15:47:41', 1, '970748', 1, '', '', '', '', '', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', 0, 0, NULL, 0, 0, 1, 0, NULL, 0, 0);
 
 -- --------------------------------------------------------
 
