@@ -547,7 +547,7 @@ $token = Token::generate();
         <strong>Warning!</strong> You are using the default reCaptcha keys. Please change them before going live.
       </div>
     <?php } ?>
-    <h1 class="text-center">UserSpice Dashboard Version <?=$user_spice_ver?></h1>
+    <h1 class="text-center">Upload Admin</h1>
     <div class="row row-centered">
 
       <a href="<?=$us_url_root?>users/admin_users.php"><div class="col-md-1 col-sm-3 col-xs-6 col-centered">
