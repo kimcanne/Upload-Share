@@ -9,7 +9,7 @@ Upload &amp; Share Your Files with Anyone
 # Installation Instructions
 
     1. Upload the files to your server
-    2. Run index.php ( Upload-Share/Upload-Share/ index.php )
+    2. Run index.php ( Upload-Share/Upload-Share/index.php )
     3. Follow instructions to complete the installation process.
     
 # Default Users & Passwords
