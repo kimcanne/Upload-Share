@@ -129,7 +129,7 @@ if (version_compare(phpversion(), $php_ver, '<')) {
             ?>
             <strong><font color="red">Unwriteable<br />
             </font>
-          It is really important that you be able to write to the init file! If you don't know how to chmod your init file, <a href="http://www.userspice.com/installation-issues/">please read this guide at UserSpice.com.</a>
+          It is really important that you be able to write to the init file</a>
           </strong>
             <?php
           }
