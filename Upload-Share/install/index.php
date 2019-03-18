@@ -20,7 +20,7 @@
           <div class="row">
               <div class="col-xs-1"></div>
               <div class="col-xs-10">
-                <H2><strong>Welcome to <?=$app_name ." " . $app_ver?></strong></H2>
+                <H2><strong>Welcome to Upload-Share V1.0</strong></H2>
 
 <p>
   This program will walk you through the entire process of configuring <?=$app_name?>.  Before you proceed, you might want to make sure that you're ready to do the install.</p>
