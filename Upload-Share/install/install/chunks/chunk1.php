@@ -9,7 +9,7 @@
 )
 );
 
-//If you changed your UserSpice or UserCake database prefix
+//If you changed your database prefix
 //put it here.
 $db_table_prefix = "uc_";  //Old database prefix
 
