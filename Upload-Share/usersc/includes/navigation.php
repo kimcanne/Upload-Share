@@ -3,7 +3,7 @@
 
 <div class="collapse navbar-collapse navbar-top-menu-collapse navbar-left"> <!-- Left navigation items -->
 	<ul class="nav navbar-nav ">
-		<li><a href="<?=$us_url_root?>"><i class="fa fa-home"></i> Home</a></li>
+	<!--	<li><a href="<?=$us_url_root?>"><i class="fa fa-home"></i> Home</a></li> -->
 		<!-- If you want something to be in the TOP menu put it down in this section -->
 		<!-- Uncomment the line below to test -->
 		<!-- <li><a href="<?=$us_url_root?>"><i class="fa fa-home"></i> Home2</a></li>	 -->
