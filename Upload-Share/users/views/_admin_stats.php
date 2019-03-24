@@ -1,6 +1,20 @@
 <h2>Statistics</h2>
 <div class="row "> <!-- rows for Info Panels -->
     <div class="col-xs-12 col-md-6">
+    
+        <div class="panel panel-default">
+      <div class="panel-heading"><strong>Totals</strong> <span class="small">(Who have logged in)</span></div>
+      <div class="panel-body text-center">
+        <div class="row" align="center">
+          <div class="col-xs-4 "><h3><?=$usersTotalCount?></h3><p>Users</p></div>
+          <div class="col-xs-4"><h3><?=$usersFoldersCount?></h3><p>Folders</p></div>
+          <div class="col-xs-4"><h3><?=$usersFilesCount?></h3><p>Files</p></div>
+          
+        </div>
+      </div>
+    </div><!--/panel-->
+    
+    
     <div class="panel panel-default">
       <div class="panel-heading"><strong>All Users</strong> <span class="small">(Who have logged in)</span></div>
       <div class="panel-body text-center">
