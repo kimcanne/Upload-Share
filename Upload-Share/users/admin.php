@@ -21,8 +21,8 @@ ini_set('max_execution_time', 1356);
 ini_set('memory_limit','1024M');
 ?>
 <?php require_once 'init.php'; ?>
-<?php require_once $abs_us_root.$us_url_root.'users/includes/header.php'; ?>
-<?php require_once $abs_us_root.$us_url_root.'users/includes/navigation.php'; ?>
+<?php require_once $abs_us_root.$us_url_root.'users/includes/custom_header.php'; ?>
+<?php require_once $abs_us_root.$us_url_root.'users/includes/custom_navigation.php'; ?>
 
 <?php if (!securePage($_SERVER['PHP_SELF'])){die();} ?>
 <link href="css/admin-tabs.css" rel="stylesheet">
@@ -82,6 +82,18 @@ $recentUsers = $recentUsersQ->results();
 $usersHourQ = $db->query("SELECT * FROM users WHERE last_login > ?",array($hour));
 $usersHour = $usersHourQ->results();
 $hourCount = $usersHourQ->count();
+
+$usersTotalQ = $db->query("SELECT * FROM users");
+//$usersTotal = $usersTotalQ->results();
+$usersTotalCount = $usersTotalQ->count();
+
+$usersFoldersQ = $db->query("SELECT * FROM category");
+//$usersFolders = $usersFoldersQ->results();
+$usersFoldersCount = $usersFoldersQ->count();
+
+$usersFilesQ = $db->query("SELECT * FROM file");
+//$usersFolders = $usersFilesQ->results();
+$usersFilesCount = $usersFilesQ->count();
 
 $usersTodayQ = $db->query("SELECT * FROM users WHERE last_login > ?",array($today));
 $dayCount = $usersTodayQ->count();
@@ -568,12 +580,6 @@ $token = Token::generate();
         </div>
       </div></a>
 
-      <a href="<?=$us_url_root?>users/check_updates.php"><div class="col-md-1 col-sm-3 col-xs-6 col-centered">
-        <div class="panel panel-default">
-          <i class="fa fa-arrow-up fa-2x"></i><br>Check<br>for Updates</li>
-        </div>
-      </div></a>
-
       <a href="<?=$us_url_root?>users/admin_menus.php"><div class="col-md-1 col-sm-3 col-xs-6 col-centered">
         <div class="panel panel-default">
           <i class="fa fa-bars fa-2x"></i><br>Menus<br>Navigation</li>
@@ -611,12 +617,6 @@ $token = Token::generate();
       <a href="<?=$us_url_root?>users/admin_messages.php"><div class="col-md-1 col-sm-3 col-xs-6 col-centered">
         <div class="panel panel-default">
           <i class="fa fa-comment fa-2x"></i><br>Manage<br>Messages</li>
-        </div>
-      </div></a>
-
-      <a href="<?=$us_url_root?>users/mqtt_settings.php"><div class="col-md-1 col-sm-3 col-xs-6 col-centered">
-        <div class="panel panel-default">
-          <i class="fa fa-microchip fa-2x"></i><br>IOT<br>MQTT</li>
         </div>
       </div></a>
 
