@@ -24,14 +24,14 @@ if(isset($user) && $user->isLoggedIn()){
         <!-- Bootstrap core CSS -->         
         <link href="users/upload/index_files/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href="carousel.css" rel="stylesheet"> 
-        <!-- Custom styles for this template -->                  
+        <!-- Custom styles for this template -->         
     </head>     
     <body> 
         <!-- Navigation -->         
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> 
             <div class="container"> 
                 <a class="navbar-brand" href="users/upload/upload.php">
-                    <img class="img-fluid" src="users/images/logo.png" >
+                    <img class="img-fluid" src="users/images/logo.png">
                 </a>                 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> 
                     <span class="navbar-toggler-icon"></span> 
@@ -62,7 +62,7 @@ if(isset($user) && $user->isLoggedIn()){
                         <div class="carousel-caption d-md-block text-left d-block">
                             <h1 class="media media-body">Open Source Solution for sharing files</h1>
                             <p>3 Simple Steps can get you started...</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                            <p><a class="btn btn-lg btn-primary" href="users/join.php" role="button">Sign up today</a></p>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ if(isset($user) && $user->isLoggedIn()){
                         <div class="carousel-caption d-md-block d-block">
                             <h1 class="bg-info d-block float-none">Step 1</h1>
                             <p class="text-white">Create a folder</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                            <p><a class="btn btn-lg btn-primary" href="users/join.php" role="button">Learn more</a></p>
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@ if(isset($user) && $user->isLoggedIn()){
                         <div class="carousel-caption d-md-block text-center d-none">
                             <h1 class="text-center bg-info">Step 2</h1>
                             <p class="text-center">Upload your files</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up</a>iin</p>
+                            <p><a class="btn btn-lg btn-primary" href="users/join.php" role="button">Sign up</a>iin</p>
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ if(isset($user) && $user->isLoggedIn()){
                         <div class="carousel-caption d-md-block text-center d-none">
                             <h1 class="text-center bg-info">Step 3</h1>
                             <p class="text-center">Public or Private Access for your files</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up</a></p>
+                            <p><a class="btn btn-lg btn-primary" href="users/join.php" role="button">Sign up</a></p>
                         </div>
                     </div>
                 </div>
@@ -107,21 +107,21 @@ if(isset($user) && $user->isLoggedIn()){
                     <img alt="Generic placeholder image" width="300" height="300" src="create.png" class="rounded-0">
                     <h2>Create</h2>
                     <p>Create a Folder</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+                    <p><a class="btn btn-secondary" href="users/join.php" role="button">View details »</a></p>
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="rounded-0" src="upload.png" alt="Generic placeholder image" width="300" height="300">
                     <h2>Upload</h2>
                     <p>Upload files to a folder</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details »</a><br></p>
+                    <p><a class="btn btn-secondary" href="users/join.php" role="button">View details »</a><br></p>
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="rounded-0" src="access.png" alt="Generic placeholder image" width="300" height="300">
                     <h2>Access</h2>
                     <p>Public or Private access</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+                    <p><a class="btn btn-secondary" href="users/join.php" role="button">View details »</a></p>
                 </div>
                 <!-- /.col-lg-4 -->
             </div>
@@ -134,12 +134,12 @@ if(isset($user) && $user->isLoggedIn()){
         <script src="users/upload/js/popper.js"></script>
         <script src="users/upload/js/bootstrap.min.js"></script>
         <script src="users/upload/js/holder.min.js"></script>         
-        <!-- Header with Background Image -->                  
-        <!-- Page Content -->                  
+        <!-- Header with Background Image -->         
+        <!-- Page Content -->         
         <!-- /.container -->         
         <!-- Footer -->         
         <footer class="py-5 bg-dark"> 
-            <div class="container">                  
+            <div class="container"> 
                 <footer>
                     <p class="float-right"><a href="#">Back to top</a></p>
                     <p class="text-white">© 2019 Upload Open Source Solution</p>
@@ -148,5 +148,5 @@ if(isset($user) && $user->isLoggedIn()){
         </div>         
         <!-- /.container -->         
     </footer>     
-    <!-- Bootstrap core JavaScript -->               
-</body> 
+    <!-- Bootstrap core JavaScript -->     
+</body>
